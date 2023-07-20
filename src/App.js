@@ -1,10 +1,12 @@
-import React from "react";
+import React from 'react';
+import Header from './Header';
+import HobbyList from './HobbyList';
+import ActivityList from './ActivityList';
 
 function App() {
   const name = "Kitty Kat";
   const birthday = "January 1";
-  const imageSrc =
-    "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg";
+  const imageSrc = "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg";
   const hobbies = ["watching birds", "hiding in a box", "napping"];
   const dailyActivities = [
     { time: "8:00 am", description: "wake up" },
@@ -16,7 +18,16 @@ function App() {
     { time: "7:00 pm", description: "play" },
     { time: "10:00 pm", description: "bedtime" },
   ];
-  return null;
+
+  return (
+    <main>
+      <Header name={name} imageSrc={imageSrc} birthday={birthday} />
+      <body>
+        <HobbyList hobbies={hobbies} />
+        <ActivityList activities={dailyActivities} />
+      </body>
+    </main>
+  );
 }
 
 export default App;
